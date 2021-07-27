@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Plugin Name: WP Callout Box
+ * Plugin URI:  https://github.com/roelmagdaleno/wp-callout-box
+ * Description: Insert callout boxes in your posts using shortcodes and Gutenberg blocks.
+ * Version:     0.1.0
+ * Author:      Roel Magdaleno
+ * Author URI:  https://roelmagdaleno.com
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+require_once 'includes/required-files.php';
+
+new WP_COUTB();

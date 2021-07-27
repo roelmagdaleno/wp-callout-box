@@ -1,0 +1,11 @@
+.wp-coutb-icon {
+    width: 30px;
+}
+
+.wp-coutb-icon__container {
+    align-items: flex-end;
+}
+
+.wp-coutb-icon__container .components-base-control {
+    margin: 0;
+}

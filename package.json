@@ -1,0 +1,37 @@
+{
+    "name": "wp-callout-box",
+    "version": "0.1.0",
+    "description": "Insert callout boxes in your posts using shortcodes and Gutenberg blocks.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node_modules/.bin/wp-scripts start src/wp-coutb.block.js  --output-path=admin/js",
+        "build": "node_modules/.bin/wp-scripts build src/wp-coutb.block.js  --output-path=admin/js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/roelmagdaleno/wp-callout-box.git"
+    },
+    "keywords": [
+        "wp",
+        "callout",
+        "boxes",
+        "alerts"
+    ],
+    "author": "Roel Magdaleno",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/roelmagdaleno/wp-callout-box/issues"
+    },
+    "homepage": "https://github.com/roelmagdaleno/wp-callout-box#readme",
+    "devDependencies": {
+        "@wordpress/block-editor": "^6.2.0",
+        "@wordpress/components": "^14.2.0",
+        "@wordpress/element": "^3.2.0",
+        "@wordpress/scripts": "^17.0.0",
+        "terser": "^5.7.1"
+    },
+    "dependencies": {
+        "@heroicons/react": "^1.0.3",
+        "uppercamelcase": "^3.0.0"
+    }
+}

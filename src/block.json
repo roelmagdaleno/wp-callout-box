@@ -1,0 +1,16 @@
+{
+    "apiVersion": 2,
+    "name": "roelmagdaleno/wp-callout-box",
+    "title": "Callout Box",
+    "category": "text",
+    "icon": "welcome-write-blog",
+    "description": "Insert callout boxes in your posts.",
+    "keywords": ["callout", "box"],
+    "version": "0.1.0",
+    "attributes": {
+        "icon": {
+            "type": "string",
+            "default": "academic-cap"
+        }
+    }
+}
