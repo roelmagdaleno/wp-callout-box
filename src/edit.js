@@ -43,7 +43,7 @@ const edit = ( { attributes, setAttributes } ) => {
             <Fragment>
                 <InspectorControls>
                     <PanelBody>
-                        <p>Preview icons in <a href="https://heroicons.com" target={'_blank'}>HeroIcons</a>.</p>
+                        <p>For a better icon preview visit <a href="https://heroicons.com" target={'_blank'}>HeroIcons</a>.</p>
 
                         <PanelRow className = { 'wp-coutb-icon__panel-row' }>
                             <div className = { 'wp-coutb-icon__container' }>
