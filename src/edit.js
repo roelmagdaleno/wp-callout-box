@@ -12,8 +12,7 @@ import {
     InspectorControls,
     RichText,
     BlockControls,
-    useBlockProps,
-    AlignmentToolbar
+    useBlockProps
 } from '@wordpress/block-editor';
 
 import icons from './icons.json';
@@ -38,30 +37,6 @@ const edit = ( { attributes, setAttributes } ) => {
     const onChangeContent = content => {
         setAttributes( { content } );
     };
-
-    const onChangeAlignment = content => {
-        setAttributes( { content } );
-    };
-
-    // return (
-    //     <div { ...useBlockProps() }>
-    //         {
-    //             <BlockControls>
-    //                 <AlignmentToolbar
-    //                     value={ attributes.alignment }
-    //                     onChange={ onChangeAlignment }
-    //                 />
-    //             </BlockControls>
-    //         }
-    //         <RichText
-    //             className={ attributes.className }
-    //             style={ { textAlign: attributes.alignment } }
-    //             tagName="p"
-    //             onChange={ onChangeContent }
-    //             value={ attributes.content }
-    //         />
-    //     </div>
-    // );
 
     return (
         <>
@@ -107,7 +82,7 @@ const edit = ( { attributes, setAttributes } ) => {
                         <RichText
                             tagName="p"
                             onChange={ onChangeContent }
-                            value={ attributes.content }
+                            value={ content }
                             placeholder="Type a callout text"
                         />
                     </div>
