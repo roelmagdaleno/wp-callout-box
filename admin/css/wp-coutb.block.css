@@ -2,10 +2,12 @@
     width: 30px;
 }
 
-.wp-coutb-icon__container {
-    align-items: flex-end;
+.wp-coutb-icon__panel-row {
+    display: block;
 }
 
-.wp-coutb-icon__container .components-base-control {
-    margin: 0;
+.wp-coutb-icon__container {
+    display: flex;
+    height: 68px;
+    justify-content: space-between;
 }

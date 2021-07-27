@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Primary",
+        "value": "primary"
+    },
+    {
+        "label": "Success",
+        "value": "success"
+    },
+    {
+        "label": "Danger",
+        "value": "danger"
+    },
+    {
+        "label": "Warning",
+        "value": "warning"
+    }
+]

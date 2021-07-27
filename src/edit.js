@@ -13,15 +13,21 @@ import {
 } from '@wordpress/block-editor';
 
 import icons from './icons.json';
+import types from './types.json';
 import Icon from './Icon';
 
 const edit = ( { attributes, setAttributes } ) => {
     const {
-        icon
+        icon,
+        type
     } = attributes;
 
     const onChangeIcon = icon => {
         setAttributes( { icon } );
+    };
+
+    const onChangeType = type => {
+        setAttributes( { type } );
     };
 
     return (
@@ -29,15 +35,28 @@ const edit = ( { attributes, setAttributes } ) => {
             <Fragment>
                 <InspectorControls>
                     <PanelBody>
-                        <PanelRow className = { 'wp-coutb-icon__container' }>
-                            <SelectControl
-                                label = { 'Icon' }
-                                value = { icon }
-                                options = { icons }
-                                onChange = { onChangeIcon }
-                            />
+                        <p>Preview icons in <a href="https://heroicons.com" target={'_blank'}>HeroIcons</a>.</p>
 
-                            <Icon icon={icon} />
+                        <PanelRow className = { 'wp-coutb-icon__panel-row' }>
+                            <div className = { 'wp-coutb-icon__container' }>
+                                <SelectControl
+                                    label = { 'Icon' }
+                                    value = { icon }
+                                    options = { icons }
+                                    onChange = { onChangeIcon }
+                                />
+
+                                <Icon icon = { icon } />
+                            </div>
+                        </PanelRow>
+
+                        <PanelRow>
+                            <SelectControl
+                                label = { 'Type' }
+                                value = { type }
+                                options = { types }
+                                onChange = { onChangeType }
+                            />
                         </PanelRow>
                     </PanelBody>
                 </InspectorControls>

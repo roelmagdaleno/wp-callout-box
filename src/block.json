@@ -10,7 +10,11 @@
     "attributes": {
         "icon": {
             "type": "string",
-            "default": "academic-cap"
+            "default": "check-circle"
+        },
+        "type": {
+            "type": "string",
+            "default": "primary"
         }
     }
 }
