@@ -23,6 +23,13 @@ class WP_COUTB {
 			WP_COUTB_VERSION
 		);
 
+		wp_enqueue_style(
+			'wp-coutb-boxes.css',
+			plugins_url( 'admin/css/wp-coutb-boxes.css', __DIR__ ),
+			null,
+			WP_COUTB_VERSION
+		);
+
 		wp_enqueue_script(
 			self::SCRIPT_HANDLE,
 			plugins_url( 'admin/js/' . self::SCRIPT_HANDLE, __DIR__ ),

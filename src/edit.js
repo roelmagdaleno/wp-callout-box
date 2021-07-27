@@ -9,7 +9,11 @@ import {
 } from '@wordpress/element';
 
 import {
-    InspectorControls
+    InspectorControls,
+    RichText,
+    BlockControls,
+    useBlockProps,
+    AlignmentToolbar
 } from '@wordpress/block-editor';
 
 import icons from './icons.json';
@@ -19,7 +23,8 @@ import Icon from './Icon';
 const edit = ( { attributes, setAttributes } ) => {
     const {
         icon,
-        type
+        type,
+        content
     } = attributes;
 
     const onChangeIcon = icon => {
@@ -29,6 +34,34 @@ const edit = ( { attributes, setAttributes } ) => {
     const onChangeType = type => {
         setAttributes( { type } );
     };
+
+    const onChangeContent = content => {
+        setAttributes( { content } );
+    };
+
+    const onChangeAlignment = content => {
+        setAttributes( { content } );
+    };
+
+    // return (
+    //     <div { ...useBlockProps() }>
+    //         {
+    //             <BlockControls>
+    //                 <AlignmentToolbar
+    //                     value={ attributes.alignment }
+    //                     onChange={ onChangeAlignment }
+    //                 />
+    //             </BlockControls>
+    //         }
+    //         <RichText
+    //             className={ attributes.className }
+    //             style={ { textAlign: attributes.alignment } }
+    //             tagName="p"
+    //             onChange={ onChangeContent }
+    //             value={ attributes.content }
+    //         />
+    //     </div>
+    // );
 
     return (
         <>
@@ -60,6 +93,25 @@ const edit = ( { attributes, setAttributes } ) => {
                         </PanelRow>
                     </PanelBody>
                 </InspectorControls>
+
+                <div { ...useBlockProps() }>
+                    {
+                        <BlockControls />
+                    }
+
+                    <div className={`wp-coutb-callout-box ${ type }`}>
+                        <div className="wp-coutb-callout-box__icon">
+                            <Icon icon={ icon } />
+                        </div>
+
+                        <RichText
+                            tagName="p"
+                            onChange={ onChangeContent }
+                            value={ attributes.content }
+                            placeholder="Type a callout text"
+                        />
+                    </div>
+                </div>
             </Fragment>
         </>
     );

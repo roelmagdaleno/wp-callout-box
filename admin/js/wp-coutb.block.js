@@ -7800,7 +7800,7 @@ function Icon(props) {
 /*! exports provided: apiVersion, name, title, category, icon, description, keywords, version, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"apiVersion\":2,\"name\":\"roelmagdaleno/wp-callout-box\",\"title\":\"Callout Box\",\"category\":\"text\",\"icon\":\"welcome-write-blog\",\"description\":\"Insert callout boxes in your posts.\",\"keywords\":[\"callout\",\"box\"],\"version\":\"0.1.0\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"check-circle\"},\"type\":{\"type\":\"string\",\"default\":\"primary\"}}}");
+module.exports = JSON.parse("{\"apiVersion\":2,\"name\":\"roelmagdaleno/wp-callout-box\",\"title\":\"Callout Box\",\"category\":\"text\",\"icon\":\"welcome-write-blog\",\"description\":\"Insert callout boxes in your posts.\",\"keywords\":[\"callout\",\"box\"],\"version\":\"0.1.0\",\"attributes\":{\"icon\":{\"type\":\"string\",\"default\":\"check-circle\"},\"type\":{\"type\":\"string\",\"default\":\"primary\"},\"content\":{\"type\":\"string\",\"source\":\"html\",\"selector\":\"p\"}}}");
 
 /***/ }),
 
@@ -7838,7 +7838,8 @@ const edit = ({
 }) => {
   const {
     icon,
-    type
+    type,
+    content
   } = attributes;
 
   const onChangeIcon = icon => {
@@ -7852,6 +7853,37 @@ const edit = ({
       type
     });
   };
+
+  const onChangeContent = content => {
+    setAttributes({
+      content
+    });
+  };
+
+  const onChangeAlignment = content => {
+    setAttributes({
+      content
+    });
+  }; // return (
+  //     <div { ...useBlockProps() }>
+  //         {
+  //             <BlockControls>
+  //                 <AlignmentToolbar
+  //                     value={ attributes.alignment }
+  //                     onChange={ onChangeAlignment }
+  //                 />
+  //             </BlockControls>
+  //         }
+  //         <RichText
+  //             className={ attributes.className }
+  //             style={ { textAlign: attributes.alignment } }
+  //             tagName="p"
+  //             onChange={ onChangeContent }
+  //             value={ attributes.content }
+  //         />
+  //     </div>
+  // );
+
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelBody"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Preview icons in ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
     href: "https://heroicons.com",
@@ -7872,7 +7904,18 @@ const edit = ({
     value: type,
     options: _types_json__WEBPACK_IMPORTED_MODULE_4__,
     onChange: onChangeType
-  }))))));
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["BlockControls"], null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: `wp-coutb-callout-box ${type}`
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "wp-coutb-callout-box__icon"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    icon: icon
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "p",
+    onChange: onChangeContent,
+    value: attributes.content,
+    placeholder: "Type a callout text"
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (edit);

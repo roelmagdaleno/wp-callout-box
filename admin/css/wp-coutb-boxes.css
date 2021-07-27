@@ -1,0 +1,54 @@
+.wp-coutb-callout-box {
+    border-radius: 4px;
+    display: inline-flex;
+    padding: 20px;
+}
+
+.wp-coutb-callout-box.primary {
+    background-color: #DBEAFE;
+    border: 1px solid #BFDBFE;
+}
+
+.wp-coutb-callout-box.primary .wp-coutb-callout-box__icon svg {
+    fill: #1E40AF;
+}
+
+.wp-coutb-callout-box.success {
+    background-color: #DCFCE7;
+    border: 1px solid #BBF7D0;
+}
+
+.wp-coutb-callout-box.success .wp-coutb-callout-box__icon svg {
+    fill: #15803D;
+}
+
+.wp-coutb-callout-box.danger {
+    background-color: #FEE2E2;
+    border: 1px solid #FECACA;
+}
+
+.wp-coutb-callout-box.danger .wp-coutb-callout-box__icon svg {
+    fill: #B91C1C;
+}
+
+.wp-coutb-callout-box.warning {
+    background-color: #FEF3C7;
+    border: 1px solid #FEF08A;
+}
+
+.wp-coutb-callout-box.warning .wp-coutb-callout-box__icon svg {
+    fill: #78350F;
+}
+
+.wp-coutb-callout-box p {
+    margin: 0 !important;
+}
+
+.wp-coutb-callout-box__icon {
+    margin-right: 10px;
+}
+
+.wp-coutb-callout-box__icon svg {
+    width: 30px;
+    height: 30px;
+}

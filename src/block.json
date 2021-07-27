@@ -15,6 +15,11 @@
         "type": {
             "type": "string",
             "default": "primary"
+        },
+        "content": {
+            "type": "string",
+            "source": "html",
+            "selector": "p"
         }
     }
 }
