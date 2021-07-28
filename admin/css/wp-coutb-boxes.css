@@ -11,7 +11,7 @@
 }
 
 .wp-coutb-callout-box.primary .wp-coutb-callout-box__icon svg {
-    fill: #1E40AF;
+    fill: #1E40AF !important;
 }
 
 .wp-coutb-callout-box.success {
@@ -20,7 +20,7 @@
 }
 
 .wp-coutb-callout-box.success .wp-coutb-callout-box__icon svg {
-    fill: #15803D;
+    fill: #15803D !important;
 }
 
 .wp-coutb-callout-box.danger {
@@ -29,7 +29,7 @@
 }
 
 .wp-coutb-callout-box.danger .wp-coutb-callout-box__icon svg {
-    fill: #B91C1C;
+    fill: #B91C1C !important;
 }
 
 .wp-coutb-callout-box.warning {
@@ -38,7 +38,7 @@
 }
 
 .wp-coutb-callout-box.warning .wp-coutb-callout-box__icon svg {
-    fill: #78350F;
+    fill: #78350F !important;
 }
 
 .wp-coutb-callout-box p {

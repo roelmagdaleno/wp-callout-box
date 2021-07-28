@@ -1,0 +1,5 @@
+{
+    "require": {
+        "roelmagdaleno/php-heroicons": "^1.0"
+    }
+}
