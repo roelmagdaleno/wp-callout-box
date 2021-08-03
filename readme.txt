@@ -1,7 +1,7 @@
-=== WP Callout Box ===
+=== Callout Boxes ===
 Contributors: rokumetal
 Donate link: https://paypal.me/roelmagdaleno
-Tags: wp, callout, boxes, alerts
+Tags: callout, boxes, alerts
 Requires at least: 5.0
 Tested up to: 5.8.0
 Stable tag: 0.1.0
