@@ -85,12 +85,18 @@ class WP_COUTB {
 			'fillrule=',
 			'cliprule=',
 			'viewbox=',
+			'strokewidth=',
+			'strokelinecap=',
+			'strokelinejoin=',
 		);
 
 		$replace = array(
 			'fill-rule=',
 			'clip-rule=',
 			'viewBox=',
+			'stroke-width=',
+			'stroke-linecap=',
+			'stroke-linejoin=',
 		);
 
 		return str_replace( $search, $replace, $block_content );

@@ -8,8 +8,6 @@ function Icon( props ) {
         outline: OutlineIcons
     };
 
-    console.log(props)
-
     const Component = `${ upperCamelCase( props.icon ) }Icon`;
     const Icon      = methods[ props.method ][ Component ];
 

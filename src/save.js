@@ -11,7 +11,7 @@ const save = ( { attributes } ) => {
     return (
         <div { ...blockProps }>
             <div className={`wp-coutb-callout-box ${ attributes.type }`}>
-                <div className="wp-coutb-callout-box__icon">
+                <div className={`wp-coutb-callout-box__icon ${ attributes.method }`}>
                     <Icon icon={ attributes.icon } method={ attributes.method } />
                 </div>
 

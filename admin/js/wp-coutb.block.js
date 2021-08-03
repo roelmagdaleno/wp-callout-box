@@ -15902,7 +15902,6 @@ function Icon(props) {
     solid: _heroicons_react_solid__WEBPACK_IMPORTED_MODULE_1__,
     outline: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_2__
   };
-  console.log(props);
   const Component = `${uppercamelcase__WEBPACK_IMPORTED_MODULE_3___default()(props.icon)}Icon`;
   const Icon = methods[props.method][Component];
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Icon, {
@@ -16074,7 +16073,7 @@ const save = ({
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: `wp-coutb-callout-box ${attributes.type}`
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "wp-coutb-callout-box__icon"
+    className: `wp-coutb-callout-box__icon ${attributes.method}`
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     icon: attributes.icon,
     method: attributes.method
