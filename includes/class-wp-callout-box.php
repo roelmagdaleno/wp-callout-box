@@ -9,8 +9,21 @@ if ( class_exists( 'WP_COUTB' ) ) {
 }
 
 class WP_COUTB {
+	/**
+	 * The script JS handle name.
+	 *
+	 * @since  0.1.0
+	 * @access private
+	 */
 	private const SCRIPT_HANDLE = 'wp-coutb.block.js';
 
+	/**
+	 * Initialize the action and filter hooks so the
+	 * callout boxes can render properly. Also will register the
+	 * shortcode for classic editor.
+	 *
+	 * @since 0.1.0
+	 */
 	public function __construct() {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_block_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -18,6 +31,16 @@ class WP_COUTB {
 		add_shortcode( 'wp-callout', array( $this, 'render_shortcode' ) );
 	}
 
+	/**
+	 * Render the callout box from a shortcode.
+	 * The rendered content will be the same as the Gutenberg block.
+	 *
+	 * @since  0.1.0
+	 *
+	 * @param  array    $atts      The attributes specified in the shortcode.
+	 * @param  string   $content   The text content inside of the callout.
+	 * @return string              The callout box HTML.
+	 */
 	public function render_shortcode( $atts, $content ) {
 		global $post;
 
@@ -76,6 +99,18 @@ class WP_COUTB {
 		return $callout;
 	}
 
+	/**
+	 * Add the missing dash character from the saved SVG HTML.
+	 *
+	 * By default, the saved SVG in the database won't include some dashes
+	 * that's why we need to include dashes.
+	 *
+	 * @since  0.1.0
+	 *
+	 * @param  string   $block_content   The block content.
+	 * @param  array    $block           The block attributes.
+	 * @return string                    The fixed block content.
+	 */
 	public function fix_inline_svg_attributes( $block_content, $block ) {
 		if ( $block['blockName'] !== WP_COUTB_GUTENBERG_BLOCK ) {
 			return $block_content;
@@ -102,6 +137,12 @@ class WP_COUTB {
 		return str_replace( $search, $replace, $block_content );
 	}
 
+	/**
+	 * Enqueue the styles to render the callout boxes properly.
+	 * It will enqueue in frontend side.
+	 *
+	 * @since 0.1.0
+	 */
 	public function enqueue_scripts() {
 		if ( ! has_block( WP_COUTB_GUTENBERG_BLOCK ) ) {
 			return;
@@ -115,6 +156,12 @@ class WP_COUTB {
 		);
 	}
 
+	/**
+	 * Enqueue the assets in the block editor so the callout box
+	 * can render properly.
+	 *
+	 * @since 0.1.0
+	 */
 	public function enqueue_editor_block_assets() {
 		wp_enqueue_style(
 			'wp-coutb.block.css',
