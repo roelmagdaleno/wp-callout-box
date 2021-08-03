@@ -38,12 +38,35 @@ class WP_COUTB {
 		remove_filter( 'the_content', 'wpautop' );
 
 		$box_atts = shortcode_atts( array(
-			'icon' => 'check-circle', // Default "check-circle".
-			'type' => 'primary', // Default "primary".
+			'icon'   => 'check-circle',
+			'type'   => 'primary',
+			'method' => 'solid',
 		), $atts );
 
+		$types = array(
+			'primary',
+			'success',
+			'danger',
+			'warning',
+		);
+
+		$methods = array(
+			'solid',
+			'outline',
+		);
+
+		$box_atts['type'] = ! in_array( $box_atts['type'], $types, true )
+			? 'primary'
+			: $box_atts['type'];
+
+		$box_atts['method'] = ! in_array( $box_atts['method'], $methods, true )
+			? 'solid'
+			: $box_atts['method'];
+
+		$heroicon = heroicon( $box_atts['icon'], array(), $box_atts['method'] );
 		$callout  = '<div class="wp-coutb-callout-box ' . esc_attr( $box_atts['type'] ) . '">';
-		$callout .= '<div class="wp-coutb-callout-box__icon">' . heroicon( $box_atts['icon'] ) . '</div>';
+		$callout .= '<div class="wp-coutb-callout-box__icon ' . esc_attr( $box_atts['method'] ) . '">';
+		$callout .=  $heroicon . '</div>';
 		$callout .= '<p>' . trim( $content ) . '</p>';
 		$callout .= '</div>';
 

@@ -16,6 +16,10 @@
             "type": "string",
             "default": "primary"
         },
+        "method": {
+            "type": "string",
+            "default": "solid"
+        },
         "content": {
             "type": "string",
             "source": "html",

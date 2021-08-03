@@ -12,7 +12,7 @@ const save = ( { attributes } ) => {
         <div { ...blockProps }>
             <div className={`wp-coutb-callout-box ${ attributes.type }`}>
                 <div className="wp-coutb-callout-box__icon">
-                    <Icon icon={ attributes.icon } />
+                    <Icon icon={ attributes.icon } method={ attributes.method } />
                 </div>
 
                 <RichText.Content

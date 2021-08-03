@@ -23,6 +23,7 @@ const edit = ( { attributes, setAttributes } ) => {
     const {
         icon,
         type,
+        method,
         content
     } = attributes;
 
@@ -32,6 +33,10 @@ const edit = ( { attributes, setAttributes } ) => {
 
     const onChangeType = type => {
         setAttributes( { type } );
+    };
+
+    const onChangeMethod = method => {
+        setAttributes( { method } );
     };
 
     const onChangeContent = content => {
@@ -54,7 +59,7 @@ const edit = ( { attributes, setAttributes } ) => {
                                     onChange = { onChangeIcon }
                                 />
 
-                                <Icon icon = { icon } />
+                                <Icon icon={ icon } method={ method } />
                             </div>
                         </PanelRow>
 
@@ -66,6 +71,24 @@ const edit = ( { attributes, setAttributes } ) => {
                                 onChange = { onChangeType }
                             />
                         </PanelRow>
+
+                        <PanelRow>
+                            <SelectControl
+                                label = { 'Method' }
+                                value = { method }
+                                options = { [
+                                    {
+                                        "label": "Solid",
+                                        "value": "solid"
+                                    },
+                                    {
+                                        "label": "Outline",
+                                        "value": "outline"
+                                    }
+                                ] }
+                                onChange = { onChangeMethod }
+                            />
+                        </PanelRow>
                     </PanelBody>
                 </InspectorControls>
 
@@ -75,8 +98,8 @@ const edit = ( { attributes, setAttributes } ) => {
                     }
 
                     <div className={`wp-coutb-callout-box ${ type }`}>
-                        <div className="wp-coutb-callout-box__icon">
-                            <Icon icon={ icon } />
+                        <div className={`wp-coutb-callout-box__icon ${ method }`}>
+                            <Icon icon={ icon } method={ method } />
                         </div>
 
                         <RichText
