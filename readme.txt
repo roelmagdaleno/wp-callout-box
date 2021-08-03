@@ -63,21 +63,11 @@ The shortcode supports 3 attributes:
 
 For Gutenberg users, you can use **Callout Box** block.
 
-![https://i.imgur.com/OextI3f.png](https://i.imgur.com/OextI3f.png)
-
-Every Gutenberg Callout Box, you can change the icon, type and method using the block properties:
-
-![https://i.imgur.com/gbeYWh2.png](https://i.imgur.com/gbeYWh2.png)
+Every Gutenberg Callout Box, you can change the icon, type and method using the block properties.
 
 Those properties are the same for the shortcode.
 
 Then, you just type your callout box content inside the Gutenberg block.
-
-### Examples
-
-Using shortcode or Gutenberg will render this callout box:
-
-![https://i.imgur.com/Tq4lDlL.png](https://i.imgur.com/Tq4lDlL.png)
 
 == Screenshots ==
 
