@@ -1,4 +1,4 @@
-# WP Callout Box
+# WP Callout Boxes
 
 Insert callout boxes in your posts and pages using shortcodes and Gutenberg blocks.
 
