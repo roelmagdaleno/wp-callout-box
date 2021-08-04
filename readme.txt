@@ -13,7 +13,7 @@ Insert callout boxes in your posts and pages using shortcodes and Gutenberg bloc
 
 == Description ==
 
-The callout box includes an icon, and the post content. The plugin uses [Heroicons](https://heroicons.com) and  [php-heroicons](https://github.com/roelmagdaleno/php-heroicons) PHP package.
+The callout box includes an icon, and the post content. This plugin uses [Heroicons](https://heroicons.com) and  [php-heroicons](https://github.com/roelmagdaleno/php-heroicons) PHP package.
 
 ### Icons
 
@@ -47,11 +47,11 @@ By default, for shortcodes and Gutenberg the icon method is `solid`.
 
 For WordPress Classic Editor or even Gutenberg, you can use the shortcode:
 
-```
+`
 [wp-callout icon="check-circle" type="primary" method="solid"]
 Welcome to WordPress. This is the post content.
 [/wp-callout]
-```
+`
 
 The shortcode supports 3 attributes:
 
