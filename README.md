@@ -62,6 +62,17 @@ Those properties are the same for the shortcode.
 
 Then, you just type your callout box content inside the Gutenberg block.
 
+## Block Presets
+
+When you insert a new Gutenberg Block Callout you can select 1 of the 4 presets installed in the plugin:
+
+- Information
+- Success
+- Danger
+- Warning
+
+After you select one preset, your callout box will change its background color and icon.
+
 ## Examples
 
 Using shortcode or Gutenberg will render this callout box:

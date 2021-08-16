@@ -4,7 +4,7 @@ Donate link: https://paypal.me/roelmagdaleno
 Tags: callout, boxes, alerts
 Requires at least: 5.0
 Tested up to: 5.8.0
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -69,6 +69,17 @@ Those properties are the same for the shortcode.
 
 Then, you just type your callout box content inside the Gutenberg block.
 
+## Block Presets
+
+When you insert a new Gutenberg Block Callout you can select 1 of the 4 presets installed in the plugin:
+
+- Information
+- Success
+- Danger
+- Warning
+
+After you select one preset, your callout box will change its background color and icon.
+
 == Screenshots ==
 
 1. screenshot-1: Gutenberg Block.
@@ -76,11 +87,19 @@ Then, you just type your callout box content inside the Gutenberg block.
 
 == Upgrade Notice ==
 
+= 0.2.0 =
+
+Introducing information, success, warning and danger presets.
+
 = 0.1.0 =
 
 Render callout boxes using shortcodes and Gutenberg blocks.
 
 == Changelog ==
+
+= 0.2.0 =
+
+Introducing information, success, warning and danger presets.
 
 = 0.1.0 =
 
