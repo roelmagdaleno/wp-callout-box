@@ -20,6 +20,9 @@
             "type": "string",
             "default": "solid"
         },
+        "preset": {
+            "type": "string"
+        },
         "content": {
             "type": "string",
             "source": "html",

@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Information",
+        "value": "information",
+        "icon": "information-circle",
+        "type": "primary"
+    },
+    {
+        "label": "Success",
+        "value": "success",
+        "icon": "check-circle",
+        "type": "success"
+    },
+    {
+        "label": "Danger",
+        "value": "danger",
+        "icon": "x-circle",
+        "type": "danger"
+    },
+    {
+        "label": "Warning",
+        "value": "warning",
+        "icon": "exclamation-circle",
+        "type": "warning"
+    }
+]

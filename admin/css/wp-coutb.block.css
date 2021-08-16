@@ -11,3 +11,75 @@
     height: 68px;
     justify-content: space-between;
 }
+
+.wp-coutb-presets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.wp-coutb-preset input {
+    display: none;
+}
+
+.wp-coutb-preset {
+    align-items: center;
+    background: red;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    margin-right: 0 !important;
+    padding: 10px;
+    text-align: center;
+    width: 90px;
+}
+
+.wp-coutb-preset:hover {
+    border-width: 4px !important;
+}
+
+.wp-coutb-preset:nth-child(-n+2) {
+    margin-bottom: 20px;
+}
+
+.wp-coutb-preset label {
+    margin: 0;
+}
+
+.wp-coutb-preset.information {
+    background-color: #DBEAFE;
+    border: 1px solid #BFDBFE;
+}
+
+.wp-coutb-preset.information svg {
+    fill: #1E40AF !important;
+}
+
+.wp-coutb-preset.success {
+    background-color: #DCFCE7;
+    border: 1px solid #BBF7D0;
+}
+
+.wp-coutb-preset.success svg {
+    fill: #15803D !important;
+}
+
+.wp-coutb-preset.danger {
+    background-color: #FEE2E2;
+    border: 1px solid #FECACA;
+}
+
+.wp-coutb-preset.danger svg {
+    fill: #B91C1C !important;
+}
+
+.wp-coutb-preset.warning {
+    background-color: #FEF3C7;
+    border: 1px solid #FEF08A;
+}
+
+.wp-coutb-preset.warning svg {
+    fill: #78350F !important;
+}
