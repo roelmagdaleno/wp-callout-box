@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'da8a67eadfe9ec81fcf27b63053b8a6c9f1e3f45',
+    'reference' => '6570dd1f6383cd6a19fc0c3d975fe7994932a947',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'da8a67eadfe9ec81fcf27b63053b8a6c9f1e3f45',
+      'reference' => '6570dd1f6383cd6a19fc0c3d975fe7994932a947',
     ),
     'meyfa/php-svg' => 
     array (
