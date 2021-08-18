@@ -7,17 +7,32 @@ import Icon from "./Icon";
 
 const save = ( { attributes } ) => {
     const blockProps = useBlockProps.save();
+    const {
+        icon,
+        type,
+        method,
+        content,
+        bgColor,
+        iconColor,
+        borderColor,
+        textColor
+    } = attributes;
 
     return (
         <div { ...blockProps }>
-            <div className={`wp-coutb-callout-box ${ attributes.type }`}>
-                <div className={`wp-coutb-callout-box__icon ${ attributes.method }`}>
-                    <Icon icon={ attributes.icon } method={ attributes.method } />
+            <div className={`wp-coutb-callout-box ${ type }`}
+                 style={{ backgroundColor: bgColor, borderColor: borderColor }}
+            >
+                <div className={`wp-coutb-callout-box__icon ${ method }`}
+                     style={{ color: iconColor }}
+                >
+                    <Icon icon={ icon } method={ method } />
                 </div>
 
                 <RichText.Content
                     tagName="p"
-                    value={ attributes.content }
+                    value={ content }
+                    style={{ color: textColor }}
                 />
             </div>
         </div>

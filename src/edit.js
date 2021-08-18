@@ -3,8 +3,10 @@ import {
     PanelBody,
     PanelRow,
     SelectControl,
-    RadioControl,
-    __experimentalRadio as Radio
+    ColorPicker,
+    ColorIndicator,
+    Dropdown,
+    Button
 } from '@wordpress/components';
 
 import {
@@ -29,24 +31,11 @@ const edit = ( { attributes, setAttributes } ) => {
         type,
         method,
         content,
-        preset
+        bgColor,
+        iconColor,
+        borderColor,
+        textColor
     } = attributes;
-
-    const onChangeIcon = icon => {
-        setAttributes( { icon } );
-    };
-
-    const onChangeType = type => {
-        setAttributes( { type } );
-    };
-
-    const onChangeMethod = method => {
-        setAttributes( { method } );
-    };
-
-    const onChangeContent = content => {
-        setAttributes( { content } );
-    };
 
     const onChangePreset = event => {
         const preset      = event.target.value;
@@ -55,7 +44,12 @@ const edit = ( { attributes, setAttributes } ) => {
         setAttributes( {
             preset,
             icon: foundPreset.icon,
-            type: foundPreset.type
+            type: foundPreset.type,
+            method: 'solid',
+            bgColor: '',
+            iconColor: '',
+            borderColor: '',
+            textColor: ''
         } );
     };
 
@@ -99,7 +93,7 @@ const edit = ( { attributes, setAttributes } ) => {
                                         label = { 'Icon' }
                                         value = { icon }
                                         options = { icons }
-                                        onChange = { onChangeIcon }
+                                        onChange = { icon => setAttributes( { icon } ) }
                                     />
 
                                     <Icon icon={ icon } method={ method } />
@@ -111,7 +105,7 @@ const edit = ( { attributes, setAttributes } ) => {
                                     label = { 'Type' }
                                     value = { type }
                                     options = { types }
-                                    onChange = { onChangeType }
+                                    onChange = { type => setAttributes( { type } ) }
                                 />
                             </PanelRow>
 
@@ -129,8 +123,180 @@ const edit = ( { attributes, setAttributes } ) => {
                                             "value": "outline"
                                         }
                                     ] }
-                                    onChange = { onChangeMethod }
+                                    onChange = { method => setAttributes( { method } ) }
                                 />
+                            </PanelRow>
+                        </PanelBody>
+                    </Panel>
+
+                    <Panel>
+                        <PanelBody title="Colors" initialOpen={ true }>
+                            <PanelRow>
+                                <div>
+                                    <Dropdown
+                                        position="bottom right"
+                                        renderToggle = {
+                                            ( { isOpen, onToggle } ) => (
+                                                <div className="wp-coutb-buttons-container">
+                                                    <div className="wp-coutb-btn__container">
+                                                        <Button
+                                                            isLink
+                                                            onClick = { onToggle }
+                                                            aria-expanded={ isOpen }
+                                                        >
+                                                            Icon Color
+                                                        </Button>
+                                                    </div>
+
+                                                    <ColorIndicator colorValue={ iconColor } />
+
+                                                    <Button
+                                                        isSecondary
+                                                        isSmall
+                                                        onClick = { () => setAttributes( { iconColor: '' } ) }
+                                                    >
+                                                        Clear
+                                                    </Button>
+                                                </div>
+                                            )
+                                        }
+                                        renderContent = {
+                                            () => (
+                                                <ColorPicker
+                                                    color = { iconColor }
+                                                    disableAlpha = { true }
+                                                    onChangeComplete = { color => setAttributes( { iconColor: color.hex } ) }
+                                                />
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </PanelRow>
+
+                            <PanelRow>
+                                <div>
+                                    <Dropdown
+                                        position="bottom right"
+                                        renderToggle = {
+                                            ( { isOpen, onToggle } ) => (
+                                                <div className="wp-coutb-buttons-container">
+                                                    <div className="wp-coutb-btn__container">
+                                                        <Button
+                                                            isLink
+                                                            onClick = { onToggle }
+                                                            aria-expanded={ isOpen }
+                                                        >
+                                                            Background Color
+                                                        </Button>
+                                                    </div>
+
+                                                    <ColorIndicator colorValue={ bgColor } />
+
+                                                    <Button
+                                                        isSecondary
+                                                        isSmall
+                                                        onClick = { () => setAttributes( { bgColor: '' } ) }
+                                                    >
+                                                        Clear
+                                                    </Button>
+                                                </div>
+                                            )
+                                        }
+                                        renderContent = {
+                                            () => (
+                                                <ColorPicker
+                                                    color = { bgColor }
+                                                    disableAlpha = { true }
+                                                    onChangeComplete = { color => setAttributes( { bgColor: color.hex } ) }
+                                                />
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </PanelRow>
+
+                            <PanelRow>
+                                <div>
+                                    <Dropdown
+                                        position="bottom right"
+                                        renderToggle = {
+                                            ( { isOpen, onToggle } ) => (
+                                                <div className="wp-coutb-buttons-container">
+                                                    <div className="wp-coutb-btn__container">
+                                                        <Button
+                                                            isLink
+                                                            onClick = { onToggle }
+                                                            aria-expanded={ isOpen }
+                                                        >
+                                                            Border Color
+                                                        </Button>
+                                                    </div>
+
+                                                    <ColorIndicator colorValue={ borderColor } />
+
+                                                    <Button
+                                                        isSecondary
+                                                        isSmall
+                                                        onClick = { () => setAttributes( { borderColor: '' } ) }
+                                                    >
+                                                        Clear
+                                                    </Button>
+                                                </div>
+                                            )
+                                        }
+                                        renderContent = {
+                                            () => (
+                                                <ColorPicker
+                                                    color = { borderColor }
+                                                    disableAlpha = { true }
+                                                    onChangeComplete = { color => setAttributes( { borderColor: color.hex } ) }
+                                                />
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </PanelRow>
+
+                            <PanelRow>
+                                <div>
+                                    <Dropdown
+                                        position="bottom right"
+                                        renderToggle = {
+                                            ( { isOpen, onToggle } ) => (
+                                                <div className="wp-coutb-buttons-container">
+                                                    <div className="wp-coutb-btn__container">
+                                                        <Button
+                                                            isLink
+                                                            onClick = { onToggle }
+                                                            aria-expanded={ isOpen }
+                                                        >
+                                                            Text Color
+                                                        </Button>
+                                                    </div>
+
+                                                    <ColorIndicator colorValue={ textColor } />
+
+                                                    <Button
+                                                        isSecondary
+                                                        isSmall
+                                                        onClick = { () => setAttributes( { textColor: '' } ) }
+                                                    >
+                                                        Clear
+                                                    </Button>
+                                                </div>
+                                            )
+                                        }
+                                        renderContent = {
+                                            () => (
+                                                <ColorPicker
+                                                    color = { textColor }
+                                                    disableAlpha = { true }
+                                                    onChangeComplete = { color => setAttributes( { textColor: color.hex } ) }
+                                                />
+                                            )
+                                        }
+                                    />
+                                </div>
                             </PanelRow>
                         </PanelBody>
                     </Panel>
@@ -141,15 +307,20 @@ const edit = ( { attributes, setAttributes } ) => {
                         <BlockControls />
                     }
 
-                    <div className={`wp-coutb-callout-box ${ type }`}>
-                        <div className={`wp-coutb-callout-box__icon ${ method }`}>
+                    <div className={`wp-coutb-callout-box ${ type }`}
+                         style={{ backgroundColor: bgColor, borderColor: borderColor }}
+                    >
+                        <div className={`wp-coutb-callout-box__icon ${ method }`}
+                             style={{ color: iconColor }}
+                        >
                             <Icon icon={ icon } method={ method } />
                         </div>
 
                         <RichText
                             tagName="p"
-                            onChange={ onChangeContent }
+                            onChange={ content => setAttributes( { content } ) }
                             value={ content }
+                            style={{ color: textColor }}
                             placeholder="Type a callout text"
                         />
                     </div>

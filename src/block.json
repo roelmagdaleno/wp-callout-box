@@ -23,6 +23,18 @@
         "preset": {
             "type": "string"
         },
+        "bgColor": {
+            "type": "string"
+        },
+        "iconColor": {
+            "type": "string"
+        },
+        "borderColor": {
+            "type": "string"
+        },
+        "textColor": {
+            "type": "string"
+        },
         "content": {
             "type": "string",
             "source": "html",

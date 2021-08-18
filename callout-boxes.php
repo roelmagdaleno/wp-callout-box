@@ -14,5 +14,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once 'includes/required-files.php';
-
 new WP_COUTB();
