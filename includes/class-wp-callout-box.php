@@ -61,9 +61,13 @@ class WP_COUTB {
 		remove_filter( 'the_content', 'wpautop' );
 
 		$box_atts = shortcode_atts( array(
-			'icon'   => 'check-circle',
-			'type'   => 'primary',
-			'method' => 'solid',
+			'icon'         => 'check-circle',
+			'type'         => 'primary',
+			'method'       => 'solid',
+			'bg-color'     => '',
+			'icon-color'   => '',
+			'border-color' => '',
+			'text-color'   => '',
 		), $atts );
 
 		$types = array(
@@ -78,25 +82,83 @@ class WP_COUTB {
 			'outline',
 		);
 
-		$box_atts['type'] = ! in_array( $box_atts['type'], $types, true )
-			? 'primary'
-			: $box_atts['type'];
-
-		$box_atts['method'] = ! in_array( $box_atts['method'], $methods, true )
-			? 'solid'
-			: $box_atts['method'];
+		$box_atts['type']   = ! in_array( $box_atts['type'], $types, true ) ? 'primary' : $box_atts['type'];
+		$box_atts['method'] = ! in_array( $box_atts['method'], $methods, true ) ? 'solid' : $box_atts['method'];
 
 		$heroicon = heroicon( $box_atts['icon'], array(), $box_atts['method'] );
-		$callout  = '<div class="wp-coutb-callout-box ' . esc_attr( $box_atts['type'] ) . '">';
-		$callout .= '<div class="wp-coutb-callout-box__icon ' . esc_attr( $box_atts['method'] ) . '">';
+		$callout  = '<div class="wp-coutb-callout-box ' . esc_attr( $box_atts['type'] ) . '" ';
+		$callout .= 'style="' . esc_attr( $this->get_box_style( $box_atts ) ) . '">';
+		$callout .= '<div class="wp-coutb-callout-box__icon ' . esc_attr( $box_atts['method'] ) . '" ';
+		$callout .= 'style="' . esc_attr( $this->get_icon_style( $box_atts ) ) . '">';
 		$callout .=  $heroicon . '</div>';
-		$callout .= '<p>' . trim( $content ) . '</p>';
+		$callout .= '<p style="' . esc_attr( $this->get_text_style( $box_atts ) ) . '">' . trim( $content ) . '</p>';
 		$callout .= '</div>';
 
 		// Register filter that adds "<br>" tags added by WordPress.
 		add_filter( 'the_content', 'wpautop', 12 );
 
 		return $callout;
+	}
+
+	/**
+	 * Get the required icon styles.
+	 *
+	 * @since  0.3.0
+	 * @access private
+	 *
+	 * @param  array   $box_atts   The box attributes.
+	 * @return string              The icon styles.
+	 */
+	private function get_icon_style( $box_atts ) {
+		$styles = '';
+
+		if ( isset( $box_atts['icon-color'] ) && ! empty( $box_atts['icon-color'] ) ) {
+			$styles .= 'color: ' . $box_atts['icon-color'] . ';';
+		}
+
+		return $styles;
+	}
+
+	/**
+	 * Get the required text styles.
+	 *
+	 * @since  0.3.0
+	 * @access private
+	 *
+	 * @param  array   $box_atts   The box attributes.
+	 * @return string              The text styles.
+	 */
+	private function get_text_style( $box_atts ) {
+		$styles = '';
+
+		if ( isset( $box_atts['text-color'] ) && ! empty( $box_atts['text-color'] ) ) {
+			$styles .= 'color: ' . $box_atts['text-color'] . ';';
+		}
+
+		return $styles;
+	}
+
+	/**
+	 * Get the required box container styles.
+	 *
+	 * @since  0.3.0
+	 * @access private
+	 *
+	 * @param  array   $box_atts   The box attributes.
+	 * @return string              The box container styles.
+	 */
+	private function get_box_style( $box_atts ) {
+		$styles = '';
+
+		if ( isset( $box_atts['bg-color'] ) && ! empty( $box_atts['bg-color'] ) ) {
+			$styles .= 'background-color: ' . $box_atts['bg-color'] . ';';
+		}
+
+		if ( isset( $box_atts['border-color'] ) && ! empty( $box_atts['border-color'] ) ) {
+			$styles .= 'border: 1px solid ' . $box_atts['border-color'] . ';';
+		}
+
+		return $styles;
 	}
 
 	/**
