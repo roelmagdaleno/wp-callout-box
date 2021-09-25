@@ -5,6 +5,34 @@ import {
 
 import Icon from "./Icon";
 
+function getStyles(rawStyles) {
+    let styles = {
+        main: {},
+        icon: {},
+        text: {}
+    };
+
+    if (rawStyles.bgColor) {
+        style.main.backgroundColor = rawStyles.bgColor;
+    }
+
+    if (rawStyles.borderColor) {
+        style.main.borderColor = rawStyles.borderColor;
+    }
+
+    if (rawStyles.iconColor) {
+        styles.icon.color = rawStyles.iconColor;
+    }
+
+    if (rawStyles.textColor) {
+        styles.text.color = rawStyles.textColor;
+    }
+
+    console.log(styles)
+
+    return styles;
+}
+
 const save = ( { attributes } ) => {
     const blockProps = useBlockProps.save();
     const {
@@ -18,13 +46,20 @@ const save = ( { attributes } ) => {
         textColor
     } = attributes;
 
+    const styles = getStyles({
+        bgColor,
+        borderColor,
+        iconColor,
+        textColor
+    });
+
     return (
         <div { ...blockProps }>
             <div className={`wp-coutb-callout-box ${ type }`}
-                 style={{ backgroundColor: bgColor, borderColor: borderColor }}
+                 style={ styles.main }
             >
                 <div className={`wp-coutb-callout-box__icon ${ method }`}
-                     style={{ color: iconColor }}
+                     style={ styles.icon }
                 >
                     <Icon icon={ icon } method={ method } />
                 </div>
@@ -32,7 +67,7 @@ const save = ( { attributes } ) => {
                 <RichText.Content
                     tagName="p"
                     value={ content }
-                    style={{ color: textColor }}
+                    style={ styles.text }
                 />
             </div>
         </div>

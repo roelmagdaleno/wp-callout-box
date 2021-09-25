@@ -4,7 +4,7 @@ Donate link: https://paypal.me/roelmagdaleno
 Tags: callout, boxes, alerts
 Requires at least: 5.0
 Tested up to: 5.8.0
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -87,6 +87,10 @@ After you select one preset, your callout box will change its background color a
 
 == Upgrade Notice ==
 
+= 0.3.1 =
+
+FIX: Custom CSS styles printed in attribute even when those aren't selected (#8)
+
 = 0.3.0 =
 
 FEATURE: Use custom colors for callout boxes. You can change the background, border, icon and text colors.
@@ -100,6 +104,10 @@ Introducing information, success, warning and danger presets.
 Render callout boxes using shortcodes and Gutenberg blocks.
 
 == Changelog ==
+
+= 0.3.1 =
+
+FIX: Custom CSS styles printed in attribute even when those aren't selected (#8)
 
 = 0.3.0 =
 
