@@ -13,11 +13,11 @@ function getStyles(rawStyles) {
     };
 
     if (rawStyles.bgColor) {
-        style.main.backgroundColor = rawStyles.bgColor;
+        styles.main.backgroundColor = rawStyles.bgColor;
     }
 
     if (rawStyles.borderColor) {
-        style.main.borderColor = rawStyles.borderColor;
+        styles.main.borderColor = rawStyles.borderColor;
     }
 
     if (rawStyles.iconColor) {
@@ -27,8 +27,6 @@ function getStyles(rawStyles) {
     if (rawStyles.textColor) {
         styles.text.color = rawStyles.textColor;
     }
-
-    console.log(styles)
 
     return styles;
 }
