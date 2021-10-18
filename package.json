@@ -1,6 +1,6 @@
 {
     "name": "wp-callout-box",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Insert callout boxes in your posts using shortcodes and Gutenberg blocks.",
     "main": "index.js",
     "scripts": {
